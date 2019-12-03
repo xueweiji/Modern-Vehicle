@@ -1,0 +1,33 @@
+<article class="add_new_form">
+    <form method="POST">
+        <h1 id="add_header">Create Your Account
+            <span>Please fill all the fields for your account</span>
+        </h1>
+        <label>
+            <span>First Name:</span>
+            <input type="text" required="required" name="first_name" size="10">
+        </label>
+        <label>
+            <span>Last Name:</span>
+            <input type="text" required="required" name="last_name" size="10">
+        </label>
+        <label>
+            <span>Email:</span>
+            <input type="text" required="required" name="email" size="10">
+        </label>
+        <label>
+            <span>Password:</span>
+            <input type="text" required="required" name="password" size="10">
+        </label>
+        <label>
+            <span>Confirm Password:</span>
+            <input type="text" required="required" name="confirm_password" />
+        </label>
+        <label>
+            {{message}}
+        </label>
+        <label>
+            <button type="submit" class="button">Submit </button>
+        </label>
+    </form>
+</article>

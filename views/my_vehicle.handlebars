@@ -1,0 +1,39 @@
+
+<div id="search_block">
+    <p>Quick Zip Filter: <input id="searchbar" onkeyup="searchByZip()" type="text" name="search" placeholder="please enter zip"></p>
+</div>
+<div id="property_list">
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Make</th>
+            <th>Model</th>
+            <th>Year</th>
+            <th>Price</th>
+            <th>Mileage</th>
+            <th></th>
+            <th></th>
+        </tr>
+    {{#each data }}
+            <tr>
+                <td>{{this._id}}</td>
+                <td>{{this.make}}</td>
+                <td>{{this.model}}</td>
+                <td>{{this.year}}</td>
+                <td>{{this.price}}</td>
+                <td>{{this.mileage}} </td>
+                <td><a href="/main/detail/{{this._id}}">More Detail</a></td>
+                <td>
+                    <form method="POST" action ='/main/myVehicleDeletion'>
+                        <input type="hidden" name="vehicleId" value="{{this._id}}">
+                        <button type="submit" class="button">Delete </button>
+                    </form>
+                </td>
+            </tr>
+    {{else}}
+        <div>
+            <h1>You don't have vehicle on the list</h1>
+        </div>
+    {{/each}}
+    </table>
+</div>

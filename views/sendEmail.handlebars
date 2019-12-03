@@ -1,0 +1,12 @@
+<article class="add_new_form">
+    <form method="POST" action="/main/sendEmail">
+        <input type="hidden" name="sellerEmail" value="{{sellerEmail}}">
+        <input type="hidden" name="customerEmail" value="{{customerEmail}}">
+        <label>
+            <textarea type="text" required="required" name="emailBody" rows="30"></textarea>
+        </label>
+        <label>
+            <button type="submit" class="button">Send Email </button>
+        </label>
+    </form>
+</article>

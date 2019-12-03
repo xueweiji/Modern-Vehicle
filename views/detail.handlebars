@@ -1,0 +1,54 @@
+
+    <div class="detail-content">
+        <div class="text-content">
+            <p>ID: {{{data._id}}}</p>
+            <p>Make: {{{data.make}}}</p>
+            <p>Model: {{{data.model}}}</p>
+            <p>Type: {{{data.type}}}</p>
+            <p>Purpose: {{{data.purpose}}}</p>
+            <p>Zip Code:{{{data.zip}}}</p>
+            <p>Year:{{{data.year}}}</p>
+            <p>Mileage:{{{data.mileage}}}</p>
+            <p>Color:{{{data.color}}}</p>
+            <p>Price:{{{data.price}}}</p>
+            {{#if username}}
+                <p><a href="/main/sendEmail/{{data.user_email}}">Contact Seller</a></p>
+            {{/if}}
+        </div>
+        <div class="img-content">
+            <p><img id="imgs" src="{{data.first_picture}}"></p>
+            <button id="prev" onclick="getProImg()">Pre</button>
+            <button id="next" onclick="getNextImg()">Next</button>
+        </div>
+    </div>
+    <div class="des-content">
+        <h3>Description:</h3>
+        <p id="des-detail">{{{data.description}}}</p>
+    </div>
+    <script>
+        var index = 0;
+        var img = [];
+        var imgObject;
+        var tempimg="";
+        {{#each data.picture}}
+            tempimg = "{{this}}";
+            img.push(tempimg)
+        {{/each}}
+        window.onload = function () {
+            imgObject=$("img")[0];
+        }
+        function getNextImg() {
+            index++;
+            if(index > img.length-1){
+                index = 0;
+            }
+            imgObject.src = img[index];
+        }
+        function getProImg() {
+            index--;
+            if(index < 0){
+                index =img.length - 1;
+            }
+            imgObject.src = img[index];
+        }
+    </script>

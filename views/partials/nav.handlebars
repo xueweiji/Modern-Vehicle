@@ -1,0 +1,35 @@
+<link rel="stylesheet" type="text/css" href="/public/css/nav.css">
+<div class="nav">
+    <div id="sub_category">
+        <ul>
+            <div id="nav">
+                {{#if username}}
+                    <li>Welcome {{username}}</li>
+                    <li><a href="/user/logout">Logout</a></li>
+                {{else}}
+                    <li><a href="/user/login">Login</a></li>
+                    <li><a href="/user/register">Create new Account</a></li>
+                {{/if}}
+            </div>
+        </ul>
+    </div>
+<div class="nav">
+    <div id="sub_category">
+        <ul>
+            <div id="nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/main/regular">Regular Car</a></li>
+                <li><a href="/main/truck">Truck</a></li>
+                <li><a href="/main/suv">SUV</a></li>
+                <li><a href="/main/rent">For Rent</a></li>
+                <li><a href="/main/sale">For Sale</a></li>
+            </div>
+            {{#if username}}
+                    <div id="add_new">
+                        <li><a href="/main/add_vehicle">Add new vehicle</a></li>
+                        <li><a href="/main/myVehicle">My sell list</a></li>
+                    </div>
+            {{/if}}
+        </ul>
+    </div>
+</div>

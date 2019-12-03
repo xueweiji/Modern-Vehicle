@@ -1,0 +1,66 @@
+
+<div id="search_block">
+   <p>Quick Zip Filter: <input id="searchbar" onkeyup="searchByZip()" type="text" name="search" placeholder="please enter zip"></p>
+</div>
+<div id="property_list">
+{{#each data }}
+    <div class="property_block" id="{{{this._id}}}">
+        <div id="detail_list">
+            <ul>
+                <li>ID:{{this._id}}</li>
+                <li>Make: {{this.make}}</li>
+                <li>Model: {{this.model}}</li>
+                <li>Type: {{this.type}}</li>
+                <li>Purpose:{{this.purpose}}</li>
+                <li>Zip Code: {{this.zip}}</li>
+                <li>Year: {{this.year}}</li>
+                <li>Mileage: {{this.mileage}} </li>
+                <li>Color:{{this.color}}</li>
+                <li>Price:${{this.price}}</li>
+                <li><a href="/main/detail/{{this._id}}">More Detail</a></li>
+            </ul>
+        </div>
+        <div id="image">
+            <img src="{{{this.first_picture}}}">
+        </div>
+    </div>
+{{else}}
+    <div>
+        <h1>No Result Found</h1>
+    </div>
+{{/each}}
+    <div id="zip_filter" style="display:none">>
+        <h1>No Result Found</h1>
+    </div>
+</div>
+<script>
+    function searchByZip() {
+        var input =  $("#searchbar").val();
+        //var input = document.getElementById('searchbar').value;
+        input=input.toLowerCase();
+        var zip="0";
+        var match=0;
+            if (input) {
+                {{#each data}}
+                    zip = {{this.zip}};
+                    var zipStr = zip.toString();
+                    if (!zipStr.includes(input)) {
+                        $("#{{this._id}}").attr("style", "display:none;");
+                    } else {
+                        match = 1;
+                        $("#{{this._id}}").attr("style", "display:true;");
+                    }
+                {{/each}}
+            } else {
+                match = 1;
+                {{#each data}}
+                    $("#{{this._id}}").attr("style", "display:true;");
+                {{/each}}
+            }
+        if (match==0){
+            $("#zip_filter").attr("style","display:true;");
+        }else{
+            $("#zip_filter").attr("style","display:none;");
+        }
+    }
+</script>

@@ -1,0 +1,54 @@
+<article class="add_new_form">
+    <form method="POST">
+        <h1 id="add_header">New Property Submission
+            <span>Please fill all the field for your property</span>
+        </h1>
+        <label>
+            <span>Property Type</span>
+            <select name="type">
+                {{#each typeList}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </label>
+        <label>
+            <span>Purpose:</span>
+            <select name="purpose">
+                {{#each purpose}}
+                    <option value="{{this}}">{{this}}</option>
+                {{/each}}
+            </select>
+        </label>
+        <label>
+            <span>Zip Code:</span>
+            <input type="text" required="required" name="zip" size="10">
+        </label>
+        <label>
+            <span>Area(sqft):</span>
+            <input type="text" required="required" name="area" size="10">
+        </label>
+        <label>
+            <span>Bedroom:</span>
+            <input type="text" required="required" name="bedroom" size="10">
+        </label>
+        <label>
+            <span>Bathroom:</span>
+            <input type="text" required="required" name="bathroom" size="10">
+        </label>
+        <label>
+            <span>Price:</span>
+            <input type="text" required="required" name="price" size="10">
+        </label>
+        <label>
+            <span>Picture:</span>
+            <input type="text" required="required" name="picture" placeholder="url1,url2" />
+        </label>
+        <label>
+            <span>Description:</span>
+            <textarea type="text" required="required" name="description" rows="20"></textarea>
+        </label>
+        <label>
+            <button type="submit" class="button">Submit </button>
+        </label>
+    </form>
+</article>
