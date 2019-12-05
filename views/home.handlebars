@@ -2,9 +2,9 @@
 <div id="search_block">
    <p>Quick Zip Filter: <input id="searchbar" onkeyup="searchByZip()" type="text" name="search" placeholder="please enter zip"></p>
 </div>
-<div id="property_list">
+<div id="vehicle_list">
 {{#each data }}
-    <div class="property_block" id="{{{this._id}}}">
+    <div class="vehicle_block" id="{{{this._id}}}">
         <div id="detail_list">
             <ul>
                 <li>ID:{{this._id}}</li>
@@ -63,4 +63,34 @@
             $("#zip_filter").attr("style","display:none;");
         }
     }
+</script>
+
+
+<script>
+
+    var socket = io();
+
+    //Task 2 - Step 2: Listen for message from server when some client creates a new movie
+    socket.on('new vehicle', function(new_vehicle) {
+        var append_content = '<div class="vehicle_block" id="'+new_vehicle._id+'">'
+        append_content+='<div class="detail_list">'
+        append_content+='<ul>'
+        append_content+='<li>ID: '+ new_vehicle._id+'</li>'
+        append_content+= '<li>Make: '+new_vehicle.make+'</li>'
+        append_content+='<li>Model: '+new_vehicle.model+'</li>'
+        append_content+='<li>Type: '+new_vehicle.type+'</li>'
+        append_content+='<li>Purpose: '+new_vehicle.purpose+'</li>'
+        append_content+='<li>Zip Code: '+new_vehicle.zip+'</li>'
+        append_content+='<li>Year: '+new_vehicle.year+'</li>'
+        append_content+='<li>Mileage: '+new_vehicle.mileage+' </li>'
+        append_content+='<li>Color: '+new_vehicle.color+'</li>'
+        append_content+='<li>Price:$ '+new_vehicle.price+'</li>'
+        append_content+='<li><a href="/main/detail/'+new_vehicle._id+'">More Detail</a></li>'
+        append_content+='</ul></div>'
+        append_content+='<div id="image">'
+        append_content+='<img src="'+new_vehicle.first_picture+'">'
+        append_content+=' </div> </div>'
+        $('#vehicle_list').append($(append_content));
+    })
+
 </script>

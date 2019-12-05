@@ -1,11 +1,11 @@
-.property_block{
+.vehicle_block{
     border:1px solid #cee3e9;
     background:#f1f7f9;
     margin-bottom: 30px;
     height:350px;
     width: 800px;
 }
-#detail_list ul{
+.detail_list ul{
     float:right;
     float: top;
     height: 330px;
@@ -16,11 +16,11 @@
     margin-right: 20px;
     float:left
 }
-#property_list{
+#vehicle_list{
     width:900px;
 
 }
-.property_block img{
+.vehicle_block img{
     width:400px;height:300px
 }
 
