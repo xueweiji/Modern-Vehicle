@@ -25,11 +25,18 @@
         </label>
         <label>
             <span>Make:</span>
-            <input type="text" required="required" name="make" size="10">
+            <select name="make" onchange="setModel(this.options[this.selectedIndex].value);">
+                <option value="">Please select make</option>
+                {{#each makes}}
+                    <option value="{{this.make}}">{{this.make}}</option>
+                {{/each}}
+            </select>
         </label>
         <label>
             <span>Model:</span>
-            <input type="text" required="required" name="model" size="10">
+            <select name="model" id ="model" required="required">
+                <option value="">Please select model</option>
+            </select>
         </label>
         <label>
             <span>Color:</span>
@@ -60,3 +67,17 @@
         </label>
     </form>
 </article>
+
+<script>
+    function setModel(make) {
+        $("#model").empty();
+        {{#each makes}}
+            var currentMake="{{this.make}}"
+            if (currentMake==make) {
+                {{#each this.model}}
+                    $("#model").append("<option value='{{this}}'>{{this}}</option>");
+                {{/each}}
+            }
+        {{/each}}
+    }
+</script>

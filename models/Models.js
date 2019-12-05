@@ -73,9 +73,22 @@ var vehicleSchema = new mongoose.Schema({
     }
 });
 
+var vehicleMakeSchema = new mongoose.Schema({
+    make: {
+        type: String,
+        required: true
+    },
+    model:{
+        type:[String],
+        required: true
+    }
+});
+
 var Vehicle = mongoose.model('Vehicle', vehicleSchema);
 var User = mongoose.model('User', userSchema);
+var Make = mongoose.model('Make', vehicleMakeSchema);
 module.exports = {
     User : User,
-    Vehicle: Vehicle
+    Vehicle: Vehicle,
+    Make: Make
 }

@@ -30,11 +30,16 @@ main.get('/',function(req,res){
 
 main.get("/main/add_vehicle", function(req, res) {
     if(req.session.sign){
-        res.render('add_vehicle', {
-            typeList: typeList,
-            purpose: purpose,
-            username:req.session.name
+        Model.Make.find({}, function(err, makes) {
+            if (err) throw err;
+            res.render('add_vehicle', {
+                typeList: typeList,
+                purpose: purpose,
+                username:req.session.name,
+                makes: makes
+            });
         });
+
     }else{
         res.render('login');
     }

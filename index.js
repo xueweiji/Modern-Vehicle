@@ -18,39 +18,6 @@ app.use(require('./api/api'));
 var dotenv = require('dotenv');
 dotenv.config()
 
-var typeList = ["Single Family", "Town House", "Appartment"];
-var purpose = ["For Rent", "For Sale"]
-
-app.get('/api/get_all_property_data',function(req,res){
-    return res.send(_DATA);
-})
-
-
-app.post('/api/add_property', function(req, res) {
-    var body = req.body;
-    if(!body.type||!body.purpose||!body.area||!body.bedroom||!body.bathroom||!body.zip||!body.price||!body.picture||!body.description){
-       return res.send ("not all key values are entered! failed to post");
-    }
-    var max_id = dataUtil.getMaxId(_DATA)
-    // Transform tags and content
-    body.picture = body.picture.split(",");
-    body.first_picture=body.picture[0];
-    // Add time and preview
-    body.id=++max_id;
-
-    // Save new blog post
-    if(!_DATA){
-        var tempbody=[];
-        tempbody[0]=req.body;
-        dataUtil.saveData(tempbody);
-    }else{
-        _DATA.push(req.body);
-        dataUtil.saveData(_DATA);
-    }
-   return res.send( "success!");
-});
-
-
 app.listen(process.env.PORT || 3000, function() {
     console.log('Listening on port 3000!');
 });

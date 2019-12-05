@@ -66,6 +66,25 @@ api.post('/api/check_account',function (req,res) {
     });
 });
 
+api.post('/api/add_make',function (req,res) {
+    // console.log(req.body);
+    var body= req.body;
+    var make = body.make;
+    var models =body.model;
+    var models = body.model.split(",");
+    var message=''
+    var Make = new Model.Make({
+        make: body.make,
+        model: models
+    });
+    Make.save(function(err) {
+        if (err) throw err;
+    });
+    message = 'New make added';
+    return res.send (message);
+});
+
+
 api.post('/api/add_vehicle',function (req,res) {
     var body = req.body;
     // Transform tags and content

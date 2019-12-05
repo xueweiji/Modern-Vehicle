@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="aa8dc241-0ba7-436c-8d67-f7a5b19a605f" name="Default Changelist" comment="" />
+    <list default="true" id="aa8dc241-0ba7-436c-8d67-f7a5b19a605f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/main/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/Models.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/Models.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/add_property.handlebars" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/add_vehicle.handlebars" beforeDir="false" afterPath="$PROJECT_DIR$/views/add_vehicle.handlebars" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,7 +22,7 @@
   <component name="ProjectId" id="1UUiwlsJ94VuXTi1GKIiTHEwYqx" />
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$USER_HOME$/Desktop/cmsc389/20191130/final" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RunDashboard">
@@ -39,7 +47,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1575417815199</updated>
-      <workItem from="1575417816332" duration="1523000" />
+      <workItem from="1575417816332" duration="2123000" />
+      <workItem from="1575428657844" duration="1455000" />
     </task>
     <servers />
   </component>
@@ -51,7 +60,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -62,7 +73,6 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/api/api.js</url>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
       </breakpoints>
