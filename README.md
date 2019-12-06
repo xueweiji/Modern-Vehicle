@@ -183,8 +183,10 @@ For example:
 Search Field: 'zip'
 
 ### 6. Navigation Pages
-User Navigation bar
+User Navigation bar:
+
 Login/ Log out/ Register/ About
+
 Navigation Filters
 1. Regular Car -> `/main/regular`
 2. SUV -> `/main/suv`
