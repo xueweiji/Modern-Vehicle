@@ -18,10 +18,10 @@ https://modern-vehicles.herokuapp.com/
 
 1.userSchema
 
-- `Field 1`:first_name     `Type: String`   
-- `Field 2`:last_name      `Type: String`    
-- `Field 3`:email          `Type: String`    
-- `Field 4`:password       `Type: String`    
+- `Field 1`: first_name     `Type: String`   
+- `Field 2`: last_name      `Type: String`    
+- `Field 3`: email          `Type: String`    
+- `Field 4`: password       `Type: String`    
 
  Schema: 
 ```javascript
@@ -34,19 +34,19 @@ https://modern-vehicles.herokuapp.com/
 ```
 
 2.vehicleOnSaleSchema
-- `Field 1`:make           `Type: String`   
-- `Field 2`:model          `Type: String`   
-- `Field 3`:year           `Type: String`   
-- `Field 4`:user_mail      `Type: String`   
-- `Field 5`:mileage        `Type: number`   
-- `Field 6`:price          `Type: String`    
-- `Field 7`:zip            `Type: String`    
-- `Field 8`:description    `Type: String`  
-- `Field 9`:first_picture  `Type: String`   
-- `Field 10`:type          `Type: String`    
-- `Field 11`:purpose       `Type: String`  
-- `Field 12`:picture       `Type:[String]`    
-- `Field 13`:color         `Type: String`  
+- `Field 1`: make           `Type: String`   
+- `Field 2`: model          `Type: String`   
+- `Field 3`: year           `Type: String`   
+- `Field 4`: user_mail      `Type: String`   
+- `Field 5`: mileage        `Type: number`   
+- `Field 6`: price          `Type: String`    
+- `Field 7`: zip            `Type: String`    
+- `Field 8`: description    `Type: String`  
+- `Field 9`: first_picture  `Type: String`   
+- `Field 10`: type          `Type: String`    
+- `Field 11`: purpose       `Type: String`  
+- `Field 12`: picture       `Type:[String]`    
+- `Field 13`: color         `Type: String`  
 
 Schema: 
 ```javascript
@@ -68,8 +68,8 @@ Schema:
 ```
 3.vehicleMakeSchema
 
-- `Field 1`:make       `Type: String`   
-- `Field 2`:model      `Type: String`     
+- `Field 1`: make       `Type: String`   
+- `Field 2`: model      `Type: String`     
 
  Schema: 
 ```javascript
@@ -165,16 +165,18 @@ request(options, function (error, response, body) {
 ```
 ### 3. View Data
 
-GET endpoint route: `/api/getVehicleByUser/:email`,`/api/getVehicleByPurpose/:purpose`,`/api/getVehicleByType/:type`,`/api/getAllVehicles`,`/api/getAllUsers`
-Example: 
+GET endpoint route: `/api/getVehicleByUser/:email`, `/api/getVehicleByPurpose/:purpose`, `/api/getVehicleByType/:type`, `/api/getAllVehicles`, `/api/getAllUsers`
+
+For example: 
 1. `https://modern-vehicles.herokuapp.com/api/getVehicleByUser/camelliaji2015@gmail.com`
 2. `https://modern-vehicles.herokuapp.com/api/getVehicleByPurpose/For Sale`
 3. `https://modern-vehicles.herokuapp.com/api/getVehicleByType/Truck`
 4. `https://modern-vehicles.herokuapp.com/api/getAllVehicles`
 5. `https://modern-vehicles.herokuapp.com/api/getAllUsers`
 ### 4. Delete Data
-DELETE endpoint route: `/api/deleteAccount/:email`,`/api/deletebyVehicleId/:id`
-Example:
+DELETE endpoint route: `/api/deleteAccount/:email`, `/api/deletebyVehicleId/:id`
+
+For example:
 1. Use Post Man Delete request: https://modern-vehicles.herokuapp.com/api/deleteAccount/camelliaji2015@gmail.com
 2. Use Post Man Delete request: https://modern-vehicles.herokuapp.com/api/deletebyVehicleId/5de71e597b3bed0017cd1183
 ### 5. Search Data
@@ -182,7 +184,7 @@ Search Field: 'zip'
 
 ### 6. Navigation Pages
 User Navigation bar
-Login/Log out/Register/About
+Login/ Log out/ Register/ About
 Navigation Filters
 1. Regular Car -> `/main/regular`
 2. SUV -> `/main/suv`

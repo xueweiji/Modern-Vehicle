@@ -18,10 +18,10 @@ https://modern-vehicles.herokuapp.com/
 
 1.userSchema
 
-- `Field 1`:first_name     `Type: String`   
-- `Field 2`:last_name      `Type: String`    
-- `Field 3`:email          `Type: String`    
-- `Field 4`:password       `Type: String`    
+- `Field 1`: first_name     `Type: String`   
+- `Field 2`: last_name      `Type: String`    
+- `Field 3`: email          `Type: String`    
+- `Field 4`: password       `Type: String`    
 
  Schema: 
 ```javascript
@@ -34,19 +34,19 @@ https://modern-vehicles.herokuapp.com/
 ```
 
 2.vehicleOnSaleSchema
-- `Field 1`:make           `Type: String`   
-- `Field 2`:model          `Type: String`   
-- `Field 3`:year           `Type: String`   
-- `Field 4`:user_mail      `Type: String`   
-- `Field 5`:mileage        `Type: number`   
-- `Field 6`:price          `Type: String`    
-- `Field 7`:zip            `Type: String`    
-- `Field 8`:description    `Type: String`  
-- `Field 9`:first_picture  `Type: String`   
-- `Field 10`:type          `Type: String`    
-- `Field 11`:purpose       `Type: String`  
-- `Field 12`:picture       `Type:[String]`    
-- `Field 13`:color         `Type: String`  
+- `Field 1`: make           `Type: String`   
+- `Field 2`: model          `Type: String`   
+- `Field 3`: year           `Type: String`   
+- `Field 4`: user_mail      `Type: String`   
+- `Field 5`: mileage        `Type: number`   
+- `Field 6`: price          `Type: String`    
+- `Field 7`: zip            `Type: String`    
+- `Field 8`: description    `Type: String`  
+- `Field 9`: first_picture  `Type: String`   
+- `Field 10`: type          `Type: String`    
+- `Field 11`: purpose       `Type: String`  
+- `Field 12`: picture       `Type:[String]`    
+- `Field 13`: color         `Type: String`  
 
 Schema: 
 ```javascript
@@ -68,8 +68,8 @@ Schema:
 ```
 3.vehicleMakeSchema
 
-- `Field 1`:make       `Type: String`   
-- `Field 2`:model      `Type: String`     
+- `Field 1`: make       `Type: String`   
+- `Field 2`: model      `Type: String`     
 
  Schema: 
 ```javascript
