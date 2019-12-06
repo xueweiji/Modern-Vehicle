@@ -196,8 +196,8 @@ After a user adds a vehicle, new vehicle info will be added into the database. I
 4. Delete Vehicle Form
 5. Send email to seller Form
 ### 9. npm
-1.express-session: use this npm to record current user status for login, log out and required login pages.
-2.nodemailer: use this npm to allow users to send emails to the vehicle owner.
+1. express-session: use this npm to record current user status for login, log out and required login pages.
+2. nodemailer: use this npm to allow users to send emails to the vehicle owner.
 
 ### 10. Handlebars
 1.about.handlebars: about page for some basic descriptions of this web.
