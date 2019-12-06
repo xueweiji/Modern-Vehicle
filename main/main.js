@@ -3,12 +3,10 @@ var main = express.Router();
 var mongoose = require('mongoose');
 mongoose.Promise=global.Promise;
 var session = require('express-session');
-var dataUtil = require("../data-util");
 nodeMailer = require('nodemailer');
 var dotenv = require('dotenv');
 dotenv.config()
 var Model = require('../models/Models');
-var _DATA = dataUtil.loadData().property_posts;
 var typeList = ["SUV", "Truck", "Regular Car"];
 var purpose = ["For Rent", "For Sale"]
 var Model = require('../models/Models');

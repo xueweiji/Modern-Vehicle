@@ -50,9 +50,9 @@ Schema:
 
 ### 2. Add New Data
 
-HTML form route: `/add_property`
+HTML form route: `/user/register`,`/add_vehicle`
 
-POST endpoint route: `/api/add_property`
+POST endpoint route: `/api/register`
 
 Example Node.js POST request to endpoint: 
 ```javascript

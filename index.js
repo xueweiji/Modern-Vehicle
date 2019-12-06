@@ -1,7 +1,6 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var fs = require('fs');
-var dataUtil = require("./data-util");
 var logger = require('morgan');
 var exphbs = require('express-handlebars');
 var http = require('http').Server(app);

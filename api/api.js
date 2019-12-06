@@ -102,10 +102,10 @@ api.post('/api/add_vehicle',function (req,res) {
         price: body.price,
         picture: body.picture,
         description: body.description,
-        user_email:req.session.email,
+        user_email:body.user_email,
         first_picture:body.first_picture
     });
-    Vehicle.save(function(err) {
+    vehicle.save(function(err) {
         if (err) throw err;
     });
     message = 'New vehicle is added';
