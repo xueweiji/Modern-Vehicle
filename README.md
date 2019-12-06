@@ -184,10 +184,12 @@ Search Field: 'zip'
 
 ### 6. Navigation Pages
 User Navigation bar:
+1. Login
+2. Log out
+3. Register
+4. About
 
-Login/ Log out/ Register/ About
-
-Navigation Filters
+Navigation Filters:
 1. Regular Car -> `/main/regular`
 2. SUV -> `/main/suv`
 3. Truck -> `/main/truck`
