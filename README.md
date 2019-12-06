@@ -22,7 +22,7 @@ https://modern-vehicles.herokuapp.com/
 - `Field 2`:last_name      `Type: String`    
 - `Field 3`:email          `Type: String`    
 - `Field 4`:password       `Type: String`    
- Schema:
+ 
 ```javascript
 {
     first_name: String,
@@ -68,7 +68,7 @@ Schema:
 
 - `Field 1`:make       `Type: String`   
 - `Field 2`:model      `Type: String`     
- Schema:
+ 
 ```javascript
 {
     make: String,
@@ -163,16 +163,24 @@ request(options, function (error, response, body) {
 ### 3. View Data
 
 GET endpoint route: `/api/getVehicleByUser/:email`,`/api/getVehicleByPurpose/:purpose`,`/api/getVehicleByType/:type`,`/api/getAllVehicles`,`/api/getAllUsers`
-
-### 4. Delete Data
+Example: 
+1. `https://modern-vehicles.herokuapp.com/api/getVehicleByUser/camelliaji2015@gmail.com`
+2. `https://modern-vehicles.herokuapp.com/api/getVehicleByPurpose/For Sale`
+3. `https://modern-vehicles.herokuapp.com/api/getVehicleByType/Truck`
+4. `https://modern-vehicles.herokuapp.com/api/getAllVehicles`
+5. `https://modern-vehicles.herokuapp.com/api/getAllUsers`
+### 4. Delete Date
 DELETE endpoint route: `/api/deleteAccount/:email`,`/api/deletebyVehicleId/:id`
+Example:
+1. Use Post Man Delete request: https://modern-vehicles.herokuapp.com/api/deleteAccount/camelliaji2015@gmail.com
+2. Use Post Man Delete request: https://modern-vehicles.herokuapp.com/api/deletebyVehicleId/5de71e597b3bed0017cd1183
 ### 5. Search Data
 Search Field: 'zip'
 
 ### 6. Navigation Pages
-# User Navigation bar
+User Navigation bar
 Login/Log out/Register/About
-# Navigation Filters
+Navigation Filters
 1. Regular Car -> `/main/regular`
 2. SUV -> `/main/suv`
 3. Truck -> `/main/truck`
@@ -188,18 +196,18 @@ After a user adds a vehicle, the new vehicle's info will be added into home/suv/
 4. Delete Vehicle Form
 5. Send email to seller Form
 ### 9. npm
-1. express-session: use this npm to record current user status for login, log out and required login pages.
-2. nodemailer: use this npm to allow users to send emails to the vehicle owner.
+1.express-session: use this npm to record current user status for login, log out and required login pages.
+2.nodemailer: use this npm to allow users to send emails to the vehicle owner.
 
 ### 10. Handlebars
-1. about.handlebars: about page for some basic descriptions of this web.
-2. add_vehicle.handlebars: a page to submit a new vehicle form.
-3. detail.handlebars: vehicle detail info.
-4. home.handlebars: home page.
-5. login.handlebars: a page to submit the login form.
-6. my_vehicle.handlebars: a page for login users to check vehicle lists uploaded by themselves.
-7. register: a page to submit the register form.
-8. sendEmail.handlebars: a page to submit the form of sending an email.
+1.about.handlebars: about page for some basic descriptions of this web.
+2.add_vehicle.handlebars: a page to submit a new vehicle form.
+3.detail.handlebars: vehicle detail info.
+4.home.handlebars: home page.
+5.login.handlebars: a page to submit the login form.
+6.my_vehicle.handlebars: a page for login users to check vehicle lists uploaded by themselves.
+7.register: a page to submit the register form.
+8.sendEmail.handlebars: a page to submit the form of sending an email.
 
 ### 11. API
 There are 3 post endpoints in the No.2 title, 5 get endpoints in the No.3 title, and 2 delete endpoints in the No.4 title.
