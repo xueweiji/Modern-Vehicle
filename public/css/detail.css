@@ -47,3 +47,8 @@
     text-shadow: 1px 1px 1px #9E3F3F;
     cursor: pointer;
 }
+
+#my_table td,#my_table th,#my_table tr{
+    border:1px solid #000000;
+    border-collapse: collapse;
+}

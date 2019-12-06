@@ -71,7 +71,9 @@ app.post('/add_vehicle', function(req, res) {
     });
     res.redirect("/");
 });
-
+app.get("/about", function(req, res) {
+    res.render('about');
+});
 http.listen(process.env.PORT || 3000, function() {
     console.log('Listening on port 3000!');
 });
