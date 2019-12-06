@@ -22,6 +22,7 @@ https://modern-vehicles.herokuapp.com/
 - `Field 2`:last_name      `Type: String`    
 - `Field 3`:email          `Type: String`    
 - `Field 4`:password       `Type: String`    
+
  Schema: 
 ```javascript
 {
@@ -69,6 +70,7 @@ Schema:
 
 - `Field 1`:make       `Type: String`   
 - `Field 2`:model      `Type: String`     
+
  Schema: 
 ```javascript
 {
