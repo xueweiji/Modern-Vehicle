@@ -79,7 +79,7 @@ Schema:
 
 HTML form route: `/api/register`
 
-POST endpoint route: `/api/register`
+POST endpoint route: `/api/api/register`
 
 ```javascript
 var request = require("request");
@@ -104,7 +104,7 @@ request(options, function (error, response, body) {
   console.log(body);
 });
 ```
-POST endpoint route: `/api/add_make`
+POST endpoint route: `/api/api/add_make`
 
 ```javascript
 var request = require("request");
@@ -127,7 +127,7 @@ request(options, function (error, response, body) {
   console.log(body);
 });
 ```
-POST endpoint route: `/api/add_vehicle`
+POST endpoint route: `/api/api/add_vehicle`
 ```javascript
 var request = require("request");
 
@@ -196,18 +196,18 @@ After a user adds a vehicle, new vehicle info will be added into the database. I
 4. Delete Vehicle Form
 5. Send email to seller Form
 ### 9. npm
-1.express-session: use this npm to record current user status for login, log out and required login pages.
-2.nodemailer: use this npm to allow users to send emails to the vehicle owner.
+1. express-session: use this npm to record current user status for login, log out and required login pages.
+2. nodemailer: use this npm to allow users to send emails to the vehicle owner.
 
 ### 10. Handlebars
-1.about.handlebars: about page for some basic descriptions of this web.
-2.add_vehicle.handlebars: a page to submit a new vehicle form.
-3.detail.handlebars: vehicle detail info.
-4.home.handlebars: home page.
-5.login.handlebars: a page to submit the login form.
-6.my_vehicle.handlebars: a page for login users to check vehicle lists uploaded by themselves.
-7.register: a page to submit the register form.
-8.sendEmail.handlebars: a page to submit the form of sending an email.
+1. about.handlebars: about page for some basic descriptions of this web.
+2. add_vehicle.handlebars: a page to submit a new vehicle form.
+3. detail.handlebars: vehicle detail info.
+4. home.handlebars: home page.
+5. login.handlebars: a page to submit the login form.
+6. my_vehicle.handlebars: a page for login users to check vehicle lists uploaded by themselves.
+7. register: a page to submit the register form.
+8. sendEmail.handlebars: a page to submit the form of sending an email.
 
 ### 11. API
 There are 3 post endpoints in the No.2 title, 5 get endpoints in the No.3 title, and 2 delete endpoints in the No.4 title.
@@ -216,4 +216,4 @@ There are 3 post endpoints in the No.2 title, 5 get endpoints in the No.3 title,
 2. The main module is used for most of the routes about vehicle info pages.
 3. The api module is used for endpoints API requests.
 ### 13. Seletion Filed in add_newVehicle page
-The Make and model selection field are from database vehicleMakeSchema. We can only /api/add_make post end point to add new Make and model.
+The Make and model selection fields are from database vehicleMakeSchema. We can only /api/add_make post endpoint to add new Make and model.
