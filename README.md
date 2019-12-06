@@ -216,4 +216,4 @@ There are 3 post endpoints in the No.2 title, 5 get endpoints in the No.3 title,
 2. The main module is used for most of the routes about vehicle info pages.
 3. The api module is used for endpoints API requests.
 ### 13. Seletion Filed in add_newVehicle page
-The Make and model selection field are from database vehicleMakeSchema. We can only /api/add_make post end point to add new Make and model.
+The Make and model selection fields are from database vehicleMakeSchema. We can only /api/add_make post endpoint to add new Make and model.
