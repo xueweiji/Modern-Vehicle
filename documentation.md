@@ -5,7 +5,7 @@ Modern Vehicle Sale and Rent Website
 
 Name: Xuewei Ji, Zhixin Jiang
 
-Date: December 5th,2019
+Date: December 5th, 2019
 
 Project Topic: A website for people to post vehicles for sale or rent.
 
