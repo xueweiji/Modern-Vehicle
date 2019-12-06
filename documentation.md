@@ -22,7 +22,7 @@ https://modern-vehicles.herokuapp.com/
 - `Field 2`:last_name      `Type: String`    
 - `Field 3`:email          `Type: String`    
 - `Field 4`:password       `Type: String`    
- 
+ Schema: 
 ```javascript
 {
     first_name: String,
@@ -31,6 +31,7 @@ https://modern-vehicles.herokuapp.com/
     password: String
 }
 ```
+
 2.vehicleOnSaleSchema
 - `Field 1`:make           `Type: String`   
 - `Field 2`:model          `Type: String`   
@@ -68,7 +69,7 @@ Schema:
 
 - `Field 1`:make       `Type: String`   
 - `Field 2`:model      `Type: String`     
- 
+ Schema: 
 ```javascript
 {
     make: String,
@@ -169,7 +170,7 @@ Example:
 3. `https://modern-vehicles.herokuapp.com/api/getVehicleByType/Truck`
 4. `https://modern-vehicles.herokuapp.com/api/getAllVehicles`
 5. `https://modern-vehicles.herokuapp.com/api/getAllUsers`
-### 4. Delete Date
+### 4. Delete Data
 DELETE endpoint route: `/api/deleteAccount/:email`,`/api/deletebyVehicleId/:id`
 Example:
 1. Use Post Man Delete request: https://modern-vehicles.herokuapp.com/api/deleteAccount/camelliaji2015@gmail.com
