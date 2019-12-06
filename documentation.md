@@ -79,7 +79,7 @@ Schema:
 
 HTML form route: `/api/register`
 
-POST endpoint route: `/api/api/register`
+POST endpoint route: `/api/register`
 
 ```javascript
 var request = require("request");
@@ -104,7 +104,7 @@ request(options, function (error, response, body) {
   console.log(body);
 });
 ```
-POST endpoint route: `/api/api/add_make`
+POST endpoint route: `/api/add_make`
 
 ```javascript
 var request = require("request");
@@ -127,7 +127,7 @@ request(options, function (error, response, body) {
   console.log(body);
 });
 ```
-POST endpoint route: `/api/api/add_vehicle`
+POST endpoint route: `/api/add_vehicle`
 ```javascript
 var request = require("request");
 
@@ -215,3 +215,5 @@ There are 3 post endpoints in the No.2 title, 5 get endpoints in the No.3 title,
 1. The user module is used for user routes.
 2. The main module is used for most of the routes about vehicle info pages.
 3. The api module is used for endpoints API requests.
+### 13. Seletion Filed in add_newVehicle page
+The Make and model selection field are from database vehicleMakeSchema. We can only /api/add_make post end point to add new Make and model.
