@@ -188,7 +188,7 @@ Navigation Filters
 5. For Sale -> `main/sale`
 
 ### 7. Socket
-After a user adds a vehicle, the new vehicle's info will be added into home/suv/truck/regular/rent/sale page automatically for other online users.
+After a user adds a vehicle, new vehicle info will be added into the database. In realtime other uses who is on the home page will see new vehicle updated on the home page automatically.
 ### 8. Forms
 1. Register Form
 2. Login Form
