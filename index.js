@@ -6,7 +6,6 @@ var exphbs = require('express-handlebars');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
 var app = express();
-var _DATA = dataUtil.loadData().property_posts;
 var dotenv = require('dotenv');
 var http = require('http').Server(app);
 var io = require('socket.io')(http);
