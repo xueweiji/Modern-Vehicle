@@ -166,7 +166,8 @@ request(options, function (error, response, body) {
 ### 3. View Data
 
 GET endpoint route: `/api/getVehicleByUser/:email`,`/api/getVehicleByPurpose/:purpose`,`/api/getVehicleByType/:type`,`/api/getAllVehicles`,`/api/getAllUsers`
-Example: 
+
+For example: 
 1. `https://modern-vehicles.herokuapp.com/api/getVehicleByUser/camelliaji2015@gmail.com`
 2. `https://modern-vehicles.herokuapp.com/api/getVehicleByPurpose/For Sale`
 3. `https://modern-vehicles.herokuapp.com/api/getVehicleByType/Truck`
@@ -174,7 +175,8 @@ Example:
 5. `https://modern-vehicles.herokuapp.com/api/getAllUsers`
 ### 4. Delete Data
 DELETE endpoint route: `/api/deleteAccount/:email`,`/api/deletebyVehicleId/:id`
-Example:
+
+For example:
 1. Use Post Man Delete request: https://modern-vehicles.herokuapp.com/api/deleteAccount/camelliaji2015@gmail.com
 2. Use Post Man Delete request: https://modern-vehicles.herokuapp.com/api/deletebyVehicleId/5de71e597b3bed0017cd1183
 ### 5. Search Data
