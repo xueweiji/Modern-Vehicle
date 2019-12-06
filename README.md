@@ -197,7 +197,7 @@ Navigation Filters:
 5. For Sale -> `main/sale`
 
 ### 7. Socket
-After a user adds a vehicle, new vehicle info will be added into the database. In realtime other uses who is on the home page will see new vehicle updated on the home page automatically.
+After a user adds a vehicle, the new vehicle info will be added into the database. In realtime, other users who are on the home page will see the new vehicle updated on the home page automatically.
 ### 8. Forms
 1. Register Form
 2. Login Form
@@ -205,7 +205,7 @@ After a user adds a vehicle, new vehicle info will be added into the database. I
 4. Delete Vehicle Form
 5. Send email to seller Form
 ### 9. npm
-1. express-session: use this npm to record current user status for login, log out and required login pages.
+1. express-session: use this npm to record current user status for login, log out, and required login pages.
 2. nodemailer: use this npm to allow users to send emails to the vehicle owner.
 
 ### 10. Handlebars
@@ -215,7 +215,7 @@ After a user adds a vehicle, new vehicle info will be added into the database. I
 4. home.handlebars: home page.
 5. login.handlebars: a page to submit the login form.
 6. my_vehicle.handlebars: a page for login users to check vehicle lists uploaded by themselves.
-7. register: a page to submit the register form.
+7. register: a page to submit the registration form.
 8. sendEmail.handlebars: a page to submit the form of sending an email.
 
 ### 11. API
@@ -224,5 +224,5 @@ There are 3 post endpoints in the No.2 title, 5 get endpoints in the No.3 title,
 1. The user module is used for user routes.
 2. The main module is used for most of the routes about vehicle info pages.
 3. The api module is used for endpoints API requests.
-### 13. Seletion Filed in add_newVehicle page
+### 13. Selection Filed in add_newVehicle page
 The Make and model selection fields are from database vehicleMakeSchema. We can only /api/add_make post endpoint to add new Make and model.
