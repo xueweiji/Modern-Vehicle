@@ -3,11 +3,11 @@
 Modern Vehicle Sale and Rent Website
 ---
 
-Name: Xuewei Ji,Zhixin Jiang
+Name: Xuewei Ji, Zhixin Jiang
 
 Date: December 5th,2019
 
-Project Topic: A website for people to post vehicle for sale and rent.
+Project Topic: A website for people to post vehicles for sale or rent.
 
 https://modern-vehicles.herokuapp.com/
 
@@ -180,7 +180,7 @@ Navigation Filters
 5. For Sale -> `main/sale`
 
 ### 7. Socket
-After user adds vehicle, new vehicle info will be added into home/suv/truck/regular/rent/sale page automatically for other users.
+After a user adds a vehicle, the new vehicle's info will be added into home/suv/truck/regular/rent/sale page automatically for other online users.
 ### 8. Forms
 1. Register Form
 2. Login Form
@@ -188,22 +188,22 @@ After user adds vehicle, new vehicle info will be added into home/suv/truck/regu
 4. Delete Vehicle Form
 5. Send email to seller Form
 ### 9. npm
-1.express-session: use this npm to record current user status for login,log out and required login pages.
-2.nodemailer: use this npm to allow user send email to vehicle owner.
+1.express-session: use this npm to record current user status for login, log out and required login pages.
+2.nodemailer: use this npm to allow users to send emails to the vehicle owner.
 
 ### 10. Handlebars
-1.about.handlebars: about page for some basic description of this web.
-2.add_vehicle.handlebars: a page to submit new vehicle form.
+1.about.handlebars: about page for some basic descriptions of this web.
+2.add_vehicle.handlebars: a page to submit a new vehicle form.
 3.detail.handlebars: vehicle detail info.
 4.home.handlebars: home page.
-5.login.handlebars: a page to submit login form.
-6.my_vehicle.handlebars:a page to user to see vehicle lists uploaded by himself.
-7.register: a page to submit register form.
-8.sendEmail.handlebars: a page to submit send email form.
+5.login.handlebars: a page to submit the login form.
+6.my_vehicle.handlebars: a page for login users to check vehicle lists uploaded by themselves.
+7.register: a page to submit the register form.
+8.sendEmail.handlebars: a page to submit the form of sending an email.
 
 ### 11. API
-3 post endpoints in ###2, 5 get endpoints in ###3, 2 delete endpoints in ###4
+There are 3 post endpoints in the No.2 title, 5 get endpoints in the No.3 title, and 2 delete endpoints in the No.4 title.
 ### 12. Modules
-1. user module for user routes.
-2. main module for most of the routes about vehicle info pages.
-3. api module for endpoints api request.
+1. The user module is used for user routes.
+2. The main module is used for most of the routes about vehicle info pages.
+3. The api module is used for endpoints API requests.
