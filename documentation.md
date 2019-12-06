@@ -1,79 +1,100 @@
 
 # PROJECT NAME
-Property Sale and Rent Info
+Modern Vehicle Sale and Rent Website
 ---
 
-Name: Xuewei Ji
+Name: Xuewei Ji,Zhixin Jiang
 
-Date: October 25th,2019
+Date: December 5th,2019
 
-Project Topic: A website for people to post property for sale and rent.
+Project Topic: A website for people to post vehicle for sale and rent.
 
-URL: http://localhost:3000/
+https://modern-vehicles.herokuapp.com/
 
 ---
 
 
 ### 1. Data Format and Storage
 
-Data point fields:
+1.userSchema
 
-- `Field 1`:type           `Type: String`   `Post via API/form` 
-- `Field 2`:purpose        `Type: String`   `Post via API/form` 
-- `Field 3`:zip            `Type: String`   `Post via API/form` 
-- `Field 4`:area           `Type: String`   `Post via API/form` 
-- `Field 5`:bedroom        `Type: String`   `Post via API/form` 
-- `Field 6`:bathroom       `Type: String`   `Post via API/form` 
-- `Field 7`:price          `Type: String`   `Post via API/form` 
-- `Field 8`:picture        `Type: [String]` `Post via API/form` 
-- `Field 9`:description    `Type: String`   `Post via API/form` 
-- `Field 10`:first_picture `Type: String`   `first value of picture array` 
-- `Field 11`:id           ` Type: number`   `auto increase while adding new object` 
+- `Field 1`:first_name     `Type: String`   
+- `Field 2`:last_name      `Type: String`    
+- `Field 3`:email          `Type: String`    
+- `Field 4`:password       `Type: String`    
+ 
+```javascript
+{
+    first_name: String,
+    last_name: String,
+    email: String,
+    password: String
+}
+```
+2.vehicleOnSaleSchema
+- `Field 1`:make           `Type: String`   
+- `Field 2`:model          `Type: String`   
+- `Field 3`:year           `Type: String`   
+- `Field 4`:user_mail      `Type: String`   
+- `Field 5`:mileage        `Type: number`   
+- `Field 6`:price          `Type: String`    
+- `Field 7`:zip            `Type: String`    
+- `Field 8`:description    `Type: String`  
+- `Field 9`:first_picture  `Type: String`   
+- `Field 10`:type          `Type: String`    
+- `Field 11`:purpose       `Type: String`  
+- `Field 12`:picture       `Type:[String]`    
+- `Field 13`:color         `Type: String`  
 
 Schema: 
 ```javascript
 {
-    type: String,
-    purpose: String,
-    zip: String,
-    area: String,
-    bedroom: String,
-    bathroom: String,
-    price: String, 
+    make: String,
+    model: String,
+    year: String,
+    user_mail: String,
+    mileage: number,
+    price: String,
+    zip: String, 
+    description: [String],
+    first_picture: String,
+    type:String,
     picture: [String],
-    description: String,
-    first_picture:String,
-    id: Number
+    color:String,
+    purpose: String
 }
 ```
+3.vehicleMakeSchema
 
-
+- `Field 1`:make       `Type: String`   
+- `Field 2`:model      `Type: String`     
+ 
+```javascript
+{
+    make: String,
+    model: String
+}
+```
 ### 2. Add New Data
 
-HTML form route: `/user/register`,`/add_vehicle`
+HTML form route: `/api/register`
 
-POST endpoint route: `/api/register`
+POST endpoint route: `/api/api/register`
 
-Example Node.js POST request to endpoint: 
 ```javascript
 var request = require("request");
 
 var options = { 
     method: 'POST',
-    url: "http://localhost:3000/api/add_property",
+    url: "https://modern-vehicles.herokuapp.com/api/register",
     headers: { 
         'content-type': 'application/x-www-form-urlencoded' 
     },
    form: {
-          type:"Single Family",
-          purpose:"For Rent",
-          area:"5000",
-          bedroom:"5",
-          bathroom:"5",
-          zip: 20950,
-          price:"5000",
-          picture:"https://www.adventuresincre.com/wp-content/uploads/2018/09/architecture-clouds-daylight-259588-e1537911534698-495x400.jpg,https://www.rockhavenga.com/wp-content/uploads/2018/12/Winter-Sale-Heights-Grant-Park.jpg,http://www.wheredoyoudwell.com/wp-content/uploads/2018/02/A-1.jpg,https://catalinadesign.com/wp-content/uploads/2016/05/Single-Family-Master-Bedroom-Design-Trends.jpg",
-          description:"Completely renovated Gem in the heart of Columbia. This house has it ALL - New Paint through out the house, Modern upgraded kitchen with Quartz countertops and New Stainless steel appliances, New recess lights throughout the house. New Hardwood floor throughout the house, new laminate floor in the basement. New Carpet in all bedrooms. New HVAC, hot water, furnace, and windows. This house is truly a MOVE-IN Ready house. Show and bring all Offers."
+          first_name:"Camellia",
+          last_name:"Ji",
+          email:"camellia@terpmail.umd.edu",
+          password:"123"
       }
 };
 
@@ -83,22 +104,106 @@ request(options, function (error, response, body) {
   console.log(body);
 });
 ```
+POST endpoint route: `/api/api/add_make`
 
+```javascript
+var request = require("request");
+
+var options = { 
+    method: 'POST',
+    url: "https://modern-vehicles.herokuapp.com/api/add_make",
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded' 
+    },
+   form: {
+          make:"Mercedes-Benz",
+          model:"A-Class,AMG GT,C-Class,CLA,CLS,E-Class,G-Class,GLA,GLC,GLE,GLS,GT Class,Maybach,Metris,S-Class,SL,SLC,Sprinter Vans"
+      }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+POST endpoint route: `/api/api/add_vehicle`
+```javascript
+var request = require("request");
+
+var options = { 
+    method: 'POST',
+    url: "https://modern-vehicles.herokuapp.com/api/add_vehicle",
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded' 
+    },
+   form: {
+        make:"Mercedes-Benz",
+            model:"C-Class",
+            type:"Regular Car",
+            zip:"21044",
+            purpose:"For Rent",
+            year:"2019",
+            mileage:2000,
+            color:"white",
+            price:"40000",
+            picture:"https://images.craigslist.org/00909_5OApP5pngZZ_600x450.jpg,https://images.craigslist.org/00W0W_7bJX8BEEJ40_600x450.jpg,https://images.craigslist.org/00c0c_bmzEeDN82G7_600x450.jpg,https://images.craigslist.org/00X0X_brYsQcCo0Wy_600x450.jpg,https://images.craigslist.org/00505_5OlKBJQc7nz_600x450.jpg,https://images.craigslist.org/00F0F_aHILLeVWBBN_600x450.jpg",
+            description:"Our elite team at Mercedes-Benz of Walnut Creek is driven to be #1 in sales and service. Just like our brand, we are dedicated to our customers and committed to being the best or nothing. We have created a culture where our associates are empowered to delight our customers, it is our mission to redefine the dealership experience. Call us to see how we can help you lease this Mercedes-Benz A-Class today!",
+            user_email:"camelliaji2017@gmail.com",
+            first_picture:"https://images.craigslist.org/00909_5OApP5pngZZ_600x450.jpg"
+      }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
 ### 3. View Data
 
-GET endpoint route: `/api/get_all_property_data`
+GET endpoint route: `/api/getVehicleByUser/:email`,`/api/getVehicleByPurpose/:purpose`,`/api/getVehicleByType/:type`,`/api/getAllVehicles`,`/api/getAllUsers`
 
-### 4. Search Data
-
+### 4. Delete Date
+DELETE endpoint route: `/api/deleteAccount/:email`,`/api/deletebyVehicleId/:id`
+### 5. Search Data
 Search Field: 'zip'
 
-### 5. Navigation Pages
-
+### 6. Navigation Pages
+User Navigation bar
+Login/Log out/Register/About
 Navigation Filters
-1. Townhose -> `/townhouse`
-2. Single Family -> `/singlefamily`
-3. Appartment -> `/appartment`
-4. For Rent -> `/rent`
-5. For Sale -> `/sale`
+1. Regular Car -> `/main/regular`
+2. SUV -> `/main/suv`
+3. Truck -> `/main/truck`
+4. For Rent -> `/main/rent`
+5. For Sale -> `main/sale`
 
-npm: express-session;nodemailer
+### 7. Socket
+After user adds vehicle, new vehicle info will be added into home/suv/truck/regular/rent/sale page automatically for other users.
+### 8. Forms
+1. Register Form
+2. Login Form
+3. Add new vehicle Form
+4. Delete Vehicle Form
+5. Send email to seller Form
+### 9. npm
+1.express-session: use this npm to record current user status for login,log out and required login pages.
+2.nodemailer: use this npm to allow user send email to vehicle owner.
+
+### 10. Handlebars
+1.about.handlebars: about page for some basic description of this web.
+2.add_vehicle.handlebars: a page to submit new vehicle form.
+3.detail.handlebars: vehicle detail info.
+4.home.handlebars: home page.
+5.login.handlebars: a page to submit login form.
+6.my_vehicle.handlebars:a page to user to see vehicle lists uploaded by himself.
+7.register: a page to submit register form.
+8.sendEmail.handlebars: a page to submit send email form.
+
+### 11. API
+3 post endpoints in ###2, 5 get endpoints in ###3, 2 delete endpoints in ###4
+### 12. Modules
+1. user module for user routes.
+2. main module for most of the routes about vehicle info pages.
+3. api module for endpoints api request.

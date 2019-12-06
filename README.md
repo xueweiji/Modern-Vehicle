@@ -1,188 +1,209 @@
-# Midterm Project
-#### Out: 10/14/19 | Deadline: 11/1/19 11:00 AM
 
-### Overview
-
-In this project, you will tie together everything you have learned up to now in the semester.
-
-The application you will build is a "crowdsourced data application".
-
-You will utilze the technologies we learned (HTML, CSS, JS, Node.js, Express, and Handlebars) to create an API and front-end website with interactivity for your data.
-
-### Objectives
-
-The purpose of this project is to create a fully functioning **"crowdsourced data application"**.
-
-First, you must select a topic for your project to be on. Example topics could be (you cannot use any of these for your project):
-
-- Local Dogs for Adoption
-- Movie Reviews
-- UMD Clubs and Activities
-- Rock Climbing Gyms
-
-Topics should ideally be people/places/things that can be crowdsourced by users of your application. Throught this project specification, we will use **Local Dog for Adoption** as an example.
-
-This project is largely open ended. The only requirement is to satisfy all parts of the `Specifications` section below, which are broad and flexible. Outside of that, you are free to be creative and make something you are proud of.
-
-### Grading
-
-You fill submit both the application source as well as a `documentation.md` file that documents how you implemented each part of the project.
-
-Grading will be done using the `documentation.md` file to test your application.
-
-Each specificiation has two types of requirements:
-- (REQ): These are requirements **must** be followed. Failue to do so can result in up to 50% point deductions for the entire project.
-- (X pt): These specifications are worth X points.
-
-### Setup
-
-There is a provided a shell that has all the dependencies you need set up. We have also included several libaries you will need in `package.json`. Clone the shell and run `npm install`.
-
-### Specifications
-
-
-1. **Data Format and Storage**
-
-    - (REQ) Data should be stored similar to how the Pokemon API and the blog engine was set up
-    - (5 pt) Each data entity should have at least 5 associated keys
-    - (5 pt) The data entity should have one of each String, Number, and Array type.
-       - Example a movie review can contain a numerical rating, a director, and an array of reviews.
-    
-
-
-2. **Add New Data**
-
-    Users will need to be able to add data to your local storage. Users will be able to add data in two ways:
-
-    - (10 pt) Submitting an HTML form. The form should have an input for each data  field.
-    - (10 pt) Sending a `POST` request to an API endpoint. The API endpoint must    take in entry for each data field.
-
-    In `documentation.md`, you will need to include:
-    - At which route the HTML form lives on the website
-    - At which route the `POST` API endpoint can be accessed.
-    - An example Node.js `POST` request using the `request` module to the API   endpoint.
-
-    **`documentation.md` example**:
-    ```markdown
-    ### 2. Add New Data
-
-    HTML form route: `/addDog`
-    POST endpoint route: `/api/addDog`
-
-    Example Node.js POST request to endpoint:
-    var request = require("request");
-
-    var options = {
-        method: 'POST',
-        url: 'http://localhost:3000/api/addDog',
-        headers: {
-            'content-type': 'application/x-www-form-urlencoded'
-        },
-        form: {
-            name: 'Cupcake',
-            breed: 'German Shepherd',
-            image: "http://i.imgur.com/iGLcfkN.jpg",
-            age: 10,
-            characteristics: ["Brown", "Black", "Sleepy", "Lazy"]
-        }
-    };
-
-    request(options, function (error, response, body) {
-      if (error) throw new Error(error);
-
-      console.log(body);
-    });
-    ```
-
-3. **View Data**
-
-    Users should be able to view all data in two ways:
-
-    - (REQ) The HTML pages should be generated using Handlebars
-    - (10 pt) At the home `/` route, you should display every data point in an  HTML Page.
-    - (10 pt) At another API `GET` endpoint, you should return all data points as   JSON.
-
-    In `documentation.md`, you will need to include:
-    - The **route** for the API endpoint that returns all data.
-
-
-    **`documentation.md` example**:
-    ```markdown
-    ### 3. View Data
-
-    GET endpoint route: `/api/getDogs`
-
-    ```
-
-4. **Search Data**
-
-    Also on the home page, you should implement an **auto-updating search feature** .
-
-    Select an appropriate field to run your searches on.
-
-    When the user first visits the home `/` page, they should see all data points.
-
-    - (15 pt) As the user types in the search bar, filter the results on the page   to those that match the search query. The results should be **auto-updating**. This means that for every keystroke, the results should be updated. The page should NOT refresh while typing and searching.
-    - (5 pt) If there is no match, then display text indicating that there are no   matches.
-
-    Note: Feel free to use any NPM modules or JavaScript libraries to help you complete this task.
-
-    **Example:**
-
-    I chose to implement search on Dog names. Suppose I have dogs `"nelson"`,  `"nelley"`, and `"noslen"`. As soon as I type `"Ne"` (without hitting enter), the  list should be filtered to only include `"nelson"` and `"nelley"`. If I type `"Nee"`, then I should see something like "There are no dogs with the name "Nee".
-
-    In `documentation.md`, you will need to include:
-    - Which field you chose to conduct the search on. If you pick a string field, please make sure it is case-insensitive.
-
-    **`documentation.md` example**:
-    ```markdown
-    ### 4. Search Data
-
-    Search Field: name
-
-    ```
-
-5. **Navigation Pages**
-
-    On the home `/` page, you should also have a **navigation bar**. This navigation bar will have **5 links**, and should be visible on every page.
-
-    The navigation bar links should filter your data in some way.
-
-    As an example, for the Dogs example, we could have:
-    - Heavy Dogs: Lists all dogs over 20.0 pounds
-    - Select a Breed: Displays a list of breeds that you can use to filter.
-    - Young Dog: Lists all dogs younger than 4 years old.
-    - Random Dog: Showcases a random dog.
-    - Alphabetical Dogs: Lists all dogs in alphabetical order by name.
-
-    (REQ) All additional pages must be rendered using handlebars.
-
-    (5 pt) 5 navigation bar links visible on each page (Hint: Use `main.handlebars`).
-
-    (15 pt) 5 pages linked to from the navigation bar that display the appropriate filtered data.
-
-    In `documentation.md`, you will need to include:
-    - Each of the 5 navigation filters
-    - The routes for each of the additional pages
-
-    **`documentation.md` example**:
-    ```markdown
-    ### 5. Navigation Pages
-
-    Navigation Filters
-    1. Heavy Dogs -> `/heaviest`
-    2. Select a Breed -> `/breed/:breed_name`
-    3. Young Dog -> `/youngest`
-    4. Random Dog -> `/random`
-    5. Alphabetical Dogs -> `/alphabetical`
-
-    ```
-
-### Submission
-
-We will be Heroku [Heroku](http://heroku.com) to submit one link per project.
-
-At the top of your project, include the **Heroku link** (ex: https://myapp.herokuapp.com) at the top of your `documentation.md` file, like so:
-
-Submit just the `documentation.md` file to the submit server.
-
+# PROJECT NAME
+Modern Vehicle Sale and Rent Website
+---
+
+Name: Xuewei Ji,Zhixin Jiang
+
+Date: December 5th,2019
+
+Project Topic: A website for people to post vehicle for sale and rent.
+
+https://modern-vehicles.herokuapp.com/
+
+---
+
+
+### 1. Data Format and Storage
+
+1.userSchema
+
+- `Field 1`:first_name     `Type: String`   
+- `Field 2`:last_name      `Type: String`    
+- `Field 3`:email          `Type: String`    
+- `Field 4`:password       `Type: String`    
+ 
+```javascript
+{
+    first_name: String,
+    last_name: String,
+    email: String,
+    password: String
+}
+```
+2.vehicleOnSaleSchema
+- `Field 1`:make           `Type: String`   
+- `Field 2`:model          `Type: String`   
+- `Field 3`:year           `Type: String`   
+- `Field 4`:user_mail      `Type: String`   
+- `Field 5`:mileage        `Type: number`   
+- `Field 6`:price          `Type: String`    
+- `Field 7`:zip            `Type: String`    
+- `Field 8`:description    `Type: String`  
+- `Field 9`:first_picture  `Type: String`   
+- `Field 10`:type          `Type: String`    
+- `Field 11`:purpose       `Type: String`  
+- `Field 12`:picture       `Type:[String]`    
+- `Field 13`:color         `Type: String`  
+
+Schema: 
+```javascript
+{
+    make: String,
+    model: String,
+    year: String,
+    user_mail: String,
+    mileage: number,
+    price: String,
+    zip: String, 
+    description: [String],
+    first_picture: String,
+    type:String,
+    picture: [String],
+    color:String,
+    purpose: String
+}
+```
+3.vehicleMakeSchema
+
+- `Field 1`:make       `Type: String`   
+- `Field 2`:model      `Type: String`     
+ 
+```javascript
+{
+    make: String,
+    model: String
+}
+```
+### 2. Add New Data
+
+HTML form route: `/api/register`
+
+POST endpoint route: `/api/api/register`
+
+```javascript
+var request = require("request");
+
+var options = { 
+    method: 'POST',
+    url: "https://modern-vehicles.herokuapp.com/api/register",
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded' 
+    },
+   form: {
+          first_name:"Camellia",
+          last_name:"Ji",
+          email:"camellia@terpmail.umd.edu",
+          password:"123"
+      }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+POST endpoint route: `/api/api/add_make`
+
+```javascript
+var request = require("request");
+
+var options = { 
+    method: 'POST',
+    url: "https://modern-vehicles.herokuapp.com/api/add_make",
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded' 
+    },
+   form: {
+          make:"Mercedes-Benz",
+          model:"A-Class,AMG GT,C-Class,CLA,CLS,E-Class,G-Class,GLA,GLC,GLE,GLS,GT Class,Maybach,Metris,S-Class,SL,SLC,Sprinter Vans"
+      }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+POST endpoint route: `/api/api/add_vehicle`
+```javascript
+var request = require("request");
+
+var options = { 
+    method: 'POST',
+    url: "https://modern-vehicles.herokuapp.com/api/add_vehicle",
+    headers: { 
+        'content-type': 'application/x-www-form-urlencoded' 
+    },
+   form: {
+        make:"Mercedes-Benz",
+            model:"C-Class",
+            type:"Regular Car",
+            zip:"21044",
+            purpose:"For Rent",
+            year:"2019",
+            mileage:2000,
+            color:"white",
+            price:"40000",
+            picture:"https://images.craigslist.org/00909_5OApP5pngZZ_600x450.jpg,https://images.craigslist.org/00W0W_7bJX8BEEJ40_600x450.jpg,https://images.craigslist.org/00c0c_bmzEeDN82G7_600x450.jpg,https://images.craigslist.org/00X0X_brYsQcCo0Wy_600x450.jpg,https://images.craigslist.org/00505_5OlKBJQc7nz_600x450.jpg,https://images.craigslist.org/00F0F_aHILLeVWBBN_600x450.jpg",
+            description:"Our elite team at Mercedes-Benz of Walnut Creek is driven to be #1 in sales and service. Just like our brand, we are dedicated to our customers and committed to being the best or nothing. We have created a culture where our associates are empowered to delight our customers, it is our mission to redefine the dealership experience. Call us to see how we can help you lease this Mercedes-Benz A-Class today!",
+            user_email:"camelliaji2017@gmail.com",
+            first_picture:"https://images.craigslist.org/00909_5OApP5pngZZ_600x450.jpg"
+      }
+};
+
+request(options, function (error, response, body) {
+  if (error) throw new Error(error);
+
+  console.log(body);
+});
+```
+### 3. View Data
+
+GET endpoint route: `/api/getVehicleByUser/:email`,`/api/getVehicleByPurpose/:purpose`,`/api/getVehicleByType/:type`,`/api/getAllVehicles`,`/api/getAllUsers`
+
+### 4. Delete Date
+DELETE endpoint route: `/api/deleteAccount/:email`,`/api/deletebyVehicleId/:id`
+### 5. Search Data
+Search Field: 'zip'
+
+### 6. Navigation Pages
+User Navigation bar
+Login/Log out/Register/About
+Navigation Filters
+1. Regular Car -> `/main/regular`
+2. SUV -> `/main/suv`
+3. Truck -> `/main/truck`
+4. For Rent -> `/main/rent`
+5. For Sale -> `main/sale`
+
+### 7. Socket
+After user adds vehicle, new vehicle info will be added into home/suv/truck/regular/rent/sale page automatically for other users.
+### 8. Forms
+1. Register Form
+2. Login Form
+3. Add new vehicle Form
+4. Delete Vehicle Form
+5. Send email to seller Form
+### 9. npm
+1.express-session: use this npm to record current user status for login,log out and required login pages.
+2.nodemailer: use this npm to allow user send email to vehicle owner.
+
+### 10. Handlebars
+1.about.handlebars: about page for some basic description of this web.
+2.add_vehicle.handlebars: a page to submit new vehicle form.
+3.detail.handlebars: vehicle detail info.
+4.home.handlebars: home page.
+5.login.handlebars: a page to submit login form.
+6.my_vehicle.handlebars:a page to user to see vehicle lists uploaded by himself.
+7.register: a page to submit register form.
+8.sendEmail.handlebars: a page to submit send email form.
+
+### 11. API
+3 post endpoints in ###2, 5 get endpoints in ###3, 2 delete endpoints in ###4
+### 12. Modules
+1. user module for user routes.
+2. main module for most of the routes about vehicle info pages.
+3. api module for endpoints api request.
